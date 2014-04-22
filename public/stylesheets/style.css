@@ -1,0 +1,22 @@
+h1, h2, h3 {
+  font-family: 'Josefin Slab', serif;
+  font-weight: 600;  /* semibold */
+  line-height: 1;
+}
+body {
+  font: 14px "Arial", Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.sizzlepig-navbar-logo {
+	padding: 0px;
+	padding-top: 8px;
+	height: auto;
+}
+
+span.glyphicon-ok {
+	margin: 0 5px 0 0;
+}

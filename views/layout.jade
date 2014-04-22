@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Josefin+Slab:400,600,700')
+		title= title
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+		script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		div.navbar.navbar-inverse.navbar-static-top(role="navigation")
+			div.container
+				div.navbar-header
+					button.navbar-toggle(type="button", data-toggle="collapse" data-target=".navbar-collapse")
+						span class="sr-only">Toggle navigation</span>
+						span class="icon-bar"></span>
+						span class="icon-bar"></span>
+					img.navbar-brand.sizzlepig-navbar-logo(src="images/sizzlepig-logo-121w.png") 
+				div.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li: a(href="/") Projects
+						li: a(href="/Settings") Settings
+		div.container
+			div.starter-template
+				block content
