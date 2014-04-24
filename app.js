@@ -11,6 +11,8 @@ var images = require('./routes/sp_images');
 var projectImages = require('./routes/projectImages')
 var settings = require('./routes/settings');
 
+var config = require('./config');
+
 var app = express();
 
 // view engine setup
