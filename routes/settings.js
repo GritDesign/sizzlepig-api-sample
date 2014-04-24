@@ -40,9 +40,19 @@ saveSettings = function(req, res) {
 _getSettings = function(cb) {
 	fs.readFile(SETTINGS_FILE, function(err, file) {
 		if (err) {
+			if (err.code == "ENOENT") {
+				cb(null, {});
+				return;
+			}
 			cb(err);
+			return;
 		}
-		cb(null, JSON.parse(file));
+		try {
+			cb(null, JSON.parse(file));
+		}
+		catch(e) {
+			cb(null, {});
+		}
 	});
 }
 
