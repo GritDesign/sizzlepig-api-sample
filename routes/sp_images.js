@@ -61,8 +61,13 @@ exports.getEditURL = function(req, res) {
 	// `req.query.files` should have list of files to edit
 	//
 	var files;
-	if (typeof req.query.files === "string") 		{ files = "files=" + req.query.files; }
-	else if (typeof req.query.files === "object") 	{ files = "files=" + req.query.files.join("&files="); }
+	if (typeof req.query.files === "string") {
+		files = "files=" + encodeURIComponent(req.query.files);
+	}
+	else if (typeof req.query.files === "object") {
+		var f = req.query.files.map(encodeURIComponent);
+		files = "files=" + f.join("&files=");
+	}
 
 	settings._getSettings(function(err, value) {
 		var url = config.SIZZLEPIG_API + "/v1/oauth/token" + '?username=' + value.username + '&password=' + value.password;
